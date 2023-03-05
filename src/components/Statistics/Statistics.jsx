@@ -5,7 +5,7 @@ import css from 'components/Statistics/Statistics.module.css'
 const Statistics = ({good, neutral, bad})=> {
 
     return (
-        <div>
+        <div className={css.statistic}>
             <h2>Statistics</h2>
             <ul>
                 <li>Good:{good}</li>

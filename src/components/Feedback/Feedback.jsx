@@ -46,8 +46,8 @@ class Feedback extends React.Component {
 
     render() {
         return (
-            <div>
-                <div>
+            <div >
+                <div className={css.wrapper}>
                     <h1>Please leave feedback</h1>
                     <div>
                         <button type="button" onClick={this.handleBtnGood}>Good</button>
