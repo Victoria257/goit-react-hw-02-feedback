@@ -1,7 +1,8 @@
 import React from 'react';
-import css from 'components/Feedback/Feedback.module.css';
-import Statistics from "components/Statistics/Statistics";
+import { Statistics } from "components/Statistics/Statistics";
 import { Notification } from 'components/NotificationMessage/NotificationMessage';
+import { FeedbackOptions } from './FeedbackOptions';
+import { Section } from 'components/Section/Section';
 
 class Feedback extends React.Component {
 
@@ -21,12 +22,14 @@ class Feedback extends React.Component {
         bad: this.props.initialBad,
     }
     
-    handleBtnGood = () => {
+    handleBtnGood = (event) => {
+        // console.log(event.target.name);
         this.setState(prevState => {
             return {
                 good: prevState.good + 1,
             };
         });
+    
     };
 
     handleBtnNeutral=()=> {
@@ -58,20 +61,18 @@ class Feedback extends React.Component {
         const total = this.countTotalFeedback();
         const positivePercentage = this.countPositiveFeedbackPercentage(total, this.state.good);
         return (
-            <div className={css.wrapper} >
-                <div >
-                    <h1>Please leave feedback</h1>
-                    <div>
-                        <button type="button" onClick={this.handleBtnGood}>Good</button>
-                        <button type="button" onClick={this.handleBtnNeutral}>Neutral</button>
-                        <button type="button" onClick={this.handleBtnBad}>Bad</button>
-                    </div>
+            <div>
+                <div>
+                    <Section title={'Please leave feedback'}>
+                        <FeedbackOptions handleBtnGood={this.handleBtnGood} handleBtnNeutral={this.handleBtnNeutral} handleBtnBad={this.handleBtnBad}/>
+                    </Section>
                 </div>
                 <div>
+                    <Section title={"Statistics"}>
                     {total > 0 ? (
-                         <Statistics good={this.state.good} neutral={this.state.neutral} bad={this.state.bad} total={total} positivePercentage={positivePercentage } />
-                    ):(<Notification/>)}
-                   
+                            <Statistics good={this.state.good} neutral={this.state.neutral} bad={this.state.bad} total={total} positivePercentage={positivePercentage } />
+                        ) : (<Notification />)} 
+                    </Section>
                 </div>
             </div>
             )

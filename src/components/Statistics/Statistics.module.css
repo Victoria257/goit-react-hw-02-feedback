@@ -1,7 +1,11 @@
 .statistic {
-    background-color: antiquewhite;
+    list-style: none;
+    text-align: left;
+
 }
 
-.statistic ul {
-    list-style: none;
+.statisticSet {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
 }

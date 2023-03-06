@@ -2,17 +2,17 @@
 import React from "react";
 import css from 'components/Statistics/Statistics.module.css'
 
-const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
+export const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
 
     return (
-        <div className={css.statistic}>
-            <h2>Statistics</h2>
-            <ul>
-                <li>Good: {good}</li>
-                <li>Neutral: {neutral}</li>
-                <li>Bad: {bad}</li>
-                <li>Total: {total}</li>
-                <li>Positive feedback:
+        
+        <div>
+            <ul className={css.statistic}>
+                <li className={css.statisticSet}>Good: {good}</li>
+                <li className={css.statisticSet}>Neutral: {neutral}</li>
+                <li className={css.statisticSet}>Bad: {bad}</li>
+                <li className={css.statisticSet}>Total: {total}</li>
+                <li className={css.statisticSet}>Positive feedback:
                     {positivePercentage ? ` ${positivePercentage}` : ` 0`}
                     %
                 </li>
@@ -20,5 +20,3 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
         </div>
     )
 }
-
-export default Statistics;
