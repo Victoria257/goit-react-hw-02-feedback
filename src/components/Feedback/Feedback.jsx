@@ -1,6 +1,7 @@
 import React from 'react';
-import css from 'components/Feedback/Feedback.module.css'
+import css from 'components/Feedback/Feedback.module.css';
 import Statistics from "components/Statistics/Statistics";
+import { Notification } from 'components/NotificationMessage/NotificationMessage';
 
 class Feedback extends React.Component {
 
@@ -67,7 +68,10 @@ class Feedback extends React.Component {
                     </div>
                 </div>
                 <div>
-                    <Statistics good={this.state.good} neutral={this.state.neutral} bad={this.state.bad} total={total} positivePercentage={positivePercentage } />
+                    {total > 0 ? (
+                         <Statistics good={this.state.good} neutral={this.state.neutral} bad={this.state.bad} total={total} positivePercentage={positivePercentage } />
+                    ):(<Notification/>)}
+                   
                 </div>
             </div>
             )
