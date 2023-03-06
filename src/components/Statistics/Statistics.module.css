@@ -1,3 +1,7 @@
 .statistic {
     background-color: antiquewhite;
 }
+
+.statistic ul {
+    list-style: none;
+}
