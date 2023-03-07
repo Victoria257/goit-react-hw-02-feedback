@@ -1,9 +1,9 @@
 import css from './FeedbackOptions.module.css'
 
-export const FeedbackOptions = ({handleBtnGood,handleBtnNeutral,handleBtnBad}) => {
+export const FeedbackOptions = ({handleBtn}) => {
           return (<div className={css.buttonsWrapper}>
-                        <button className={css.button} name="good" type="button" onClick={handleBtnGood}>Good</button>
-                        <button className={css.button} name="neutral" type="button" onClick={handleBtnNeutral}>Neutral</button>
-                        <button className={css.button} name="bad" type="button" onClick={handleBtnBad}>Bad</button>
+                        <button className={css.button} name="good" type="button" onClick={handleBtn}>Good</button>
+                        <button className={css.button} name="neutral" type="button" onClick={handleBtn}>Neutral</button>
+                        <button className={css.button} name="bad" type="button" onClick={handleBtn}>Bad</button>
                 </div>)
 }

@@ -22,31 +22,14 @@ class Feedback extends React.Component {
         bad: this.props.initialBad,
     }
     
-    handleBtnGood = (event) => {
-        // console.log(event.target.name);
+    handleBtn = (event) => {
         this.setState(prevState => {
             return {
-                good: prevState.good + 1,
+                [event.target.name]: prevState[event.target.name] + 1,
             };
         });
     
     };
-
-    handleBtnNeutral=()=> {
-     this.setState(prevState => {
-            return {
-                neutral: prevState.neutral + 1,
-            };
-        });
-    }
-
-    handleBtnBad=()=> {
-          this.setState(prevState => {
-            return {
-                bad: prevState.bad + 1,
-            };
-        });
-    }
 
     countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;
@@ -64,7 +47,7 @@ class Feedback extends React.Component {
             <div>
                 <div>
                     <Section title={'Please leave feedback'}>
-                        <FeedbackOptions handleBtnGood={this.handleBtnGood} handleBtnNeutral={this.handleBtnNeutral} handleBtnBad={this.handleBtnBad}/>
+                        <FeedbackOptions handleBtn={this.handleBtn}/>
                     </Section>
                 </div>
                 <div>
