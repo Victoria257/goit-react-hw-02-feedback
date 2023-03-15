@@ -5,16 +5,10 @@ import { FeedbackOptions } from 'components/Feedback/FeedbackOptions';
 import { Section } from 'components/Section/Section';
 
 export class App extends React.Component {
-  static defaultProps = {
-    initialGood: 0,
-    initialNeutral: 0,
-    initialBad: 0,
-  };
-
   state = {
-    good: this.props.initialGood,
-    neutral: this.props.initialNeutral,
-    bad: this.props.initialBad,
+    good: 0,
+    neutral: 0,
+    bad: 0,
   };
 
   handleBtn = event => {
@@ -62,7 +56,7 @@ export class App extends React.Component {
                 positivePercentage={positivePercentage}
               />
             ) : (
-              <Notification />
+              <Notification message="There is no feedback" />
             )}
           </Section>
         </div>

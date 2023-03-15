@@ -21,4 +21,5 @@ export const FeedbackOptions = ({ handleBtn, options }) => {
 
 FeedbackOptions.propTypes = {
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  handleBtn: PropTypes.func.isRequired,
 };
